@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user/register" method="post" enctype="multipart/form-data">
+    <div>
+        <label>
+            <span>Имя</span>
+            <input name="name" type="text">
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Пароль</span>
+            <input name="password" type="password">
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Email</span>
+            <input name="email" type="text">
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Возраст</span>
+            <input name="age" type="number">
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Аватар</span>
+            <input type="file" accept="image/*" class="form-control-file" id="avatar" name="avatar">
+        </label>
+    </div>
+    <button type="submit">Регистрация</button>
+</form>
+</body>
+</html>

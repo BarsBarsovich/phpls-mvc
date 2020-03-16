@@ -1,0 +1,15 @@
+{
+  "name": "mvc",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "controllers\\": "controllers/",
+      "helpers\\": "helpers/",
+      "models\\": "models/",
+      "views\\": "views/"
+    }
+  },
+  "require": {
+    "twig/twig": "^2.0"
+  }
+}
