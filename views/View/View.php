@@ -19,7 +19,7 @@ class View
     public function render($path, $data = [])
     {
         try {
-            $path = (stristr($path, '.html')) ? $path : "$path.phtml";
+            $path = (stristr($path, '.html')) ? $path : "$path.twig";
             $result = $this->templateEngine->render($path, !empty($data) ? $data : []);
         } catch (Twig_Error $exception) {
             $result = $exception->getMessage();

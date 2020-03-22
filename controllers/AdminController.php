@@ -22,26 +22,15 @@ class AdminController extends Controller
     public function users($sortOrder = 'asc')
     {
         $result = Users::getAllUsers($sortOrder);
-        $this->changeResult($result);
-
-        // Вот так почему то результат не поменялся
-//        foreach ($result as $row) {
-//            if ((int)$row['age'] < 18) {
-//                echo 'less 18';
-//                $result['age'] = 'Несовершеннолетний';
-//            } else {
-//                echo 'more 18';
-//                $result['age'] = 'совершеннолетний';
-//            }
-//        }
-        echo '<pre>';
-        print_r($result);
+        $this->renderView('admin', ['users' => $this->changeResult($result), 'userFiles'=> $this->getFilesByUser($_SESSION['user_id'])]);
     }
 
     public function usersdesc($sortOrder = 'desc')
     {
         $result = Users::getAllUsers($sortOrder);
-        $this->changeResult($result);
+        $this->userList = $this->changeResult($result);
+        $this->renderView('admin', ['users' => $this->changeResult($result)]);
+
     }
 
     private function changeResult($result)
@@ -54,6 +43,6 @@ class AdminController extends Controller
             }
         }
 
-        $this->userList = $result;
+        return $result;
     }
 }

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="/admin/usersdesc">Отсортировать по убыванию</a>
+{%  if userFiles %}
+    <p> Количетсво файлов загруженнных пользователем {{ userFiles }}</p>
+{% endif %}
+{% if users %}
+    <table border="1px solid">
+        <tr>
+            <td>Id</td>
+            <td>Имя</td>
+            <td>Возраст</td>
+        </tr>
+
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id|e }}</td>
+                <td>{{ user.name|e }}</td>
+                <td>{{ user.age|e }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+</body>
+</html>
